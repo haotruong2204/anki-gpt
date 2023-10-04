@@ -1,24 +1,6 @@
-# README
+# Author: haotruong.dev
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Follow me
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Official website](https://img.shields.io/badge/Code%20by-haotruong-informational?style=flat&logo=rubyonrails)](https://www.haotruong.dev)
+[![Facebook](https://img.shields.io/badge/facebook-send%20message-1DA1F2?style=flat&logo=facebook&logoColor=ffffff)](https://www.facebook.com/haotv03)
