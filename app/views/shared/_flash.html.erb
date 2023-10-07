@@ -1,0 +1,11 @@
+<% flash.each do |type, message| %>
+  <% next if message.blank? %>
+  <div id="toastr-container" class="toastr-top-right">
+    <div class="toastr toastr-<%= flash_class type.to_sym %>" aria-live="assertive" style="">
+      <div class="toastr-progress" style="width: 97.789%;"></div>
+      <button type="button" class="toastr-close-button" role="button">×</button>
+      <div class="toastr-title"><%=  t("helper.flash.#{flash_class(type.to_sym)}") %></div>
+      <div class="toastr-message"><%= message.html_safe %></div>
+    </div>
+  </div>
+<% end %>

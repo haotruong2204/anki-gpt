@@ -43,7 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sass-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -82,6 +82,12 @@ gem "dotenv-rails"
 # Authentication & async send mail with devise
 gem "devise"
 gem "devise-async"
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'omniauth-line'
 
 # Schema in model
 gem "annotate"

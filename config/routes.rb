@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  require 'sidekiq/web'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount Sidekiq::Web => "/sidekiq"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "admin/dashboard#index"
+
+  namespace :admin do
+    root "dashboard#index"
+   
+    devise_for :admins, path: "", path_names: { sign_in: "login", sign_out: "logout" }
+  end
 end
