@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin | Anki Nihongo</title>
+    <%= favicon_link_tag asset_path("favicon.png"), rel: "icon", type: "image/x-icon" %>
+    <%= stylesheet_link_tag :application, media: "all" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="google" content="notranslate">
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= javascript_importmap_tags %>
+  </body>
+</html>

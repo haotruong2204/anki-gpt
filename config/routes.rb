@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount Sidekiq::Web => "/sidekiq"
 
-  root "admin/dashboard#index"
+  root "client/dashboard#index"
 
   namespace :admin do
     root "dashboard#index"
