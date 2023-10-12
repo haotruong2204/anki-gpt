@@ -18,6 +18,7 @@ module AnkiGpt
       "locales", "**", "*.{rb,yml}").to_s]
     config.i18n.default_locale = :vi
     config.assets.paths << Rails.root.join("app", "assets", "images")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.active_storage.variant_processor = :mini_magick
     config.active_job.queue_adapter = :sidekiq
