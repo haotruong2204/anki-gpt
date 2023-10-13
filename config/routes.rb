@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root "client/dashboard#index"
 
+  scope module: "client", path: "", as: "" do
+    devise_for :accounts, path: "", path_names: { sign_in: "login", sign_out: "logout" }
+  end
+
   namespace :admin do
     root "dashboard#index"
    

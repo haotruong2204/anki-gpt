@@ -1,0 +1,27 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: "false" }, html: { id: "kt_sign_in_form" }) do |f| %>
+  <div class="fv-row mb-8">
+    <%= f.text_field :email, autofocus: true,
+      placeholder: "Email", autocomplete: "off", class: "form-control bg-transparent" %>
+  </div>
+  <div class="fv-row mb-3">    
+    <%= f.password_field :password, placeholder: "Mật Khẩu", autocomplete: "off", class: "form-control bg-transparent" %>
+  </div>
+
+  <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
+    <div></div>
+    <a href="" class="link-primary">
+      Quên mật khẩu
+    </a>
+  </div>
+  <div class="d-grid mb-10">
+    <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+      <span class="indicator-label">
+        Đăng Nhập
+      </span>
+      <span class="indicator-progress">
+        Please wait...    
+        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+      </span>
+    </button>
+  </div>
+<% end %>

@@ -20,7 +20,7 @@
     <meta content='website' property='og:type'>
     <meta content='https://luyenkanji.com/' property='og:url'>
     <meta content='https://luyenkanji.com' property='og:see_also'>
-    <title>Trang chủ | Luyenkanji.com</title>
+    <title>Trang chủ | Luyenkanji.com - Ứng dụng luyện Kanji theo nét viết tay</title>
     <%= favicon_link_tag asset_path("favicon.svg"), rel: "icon", type: "image/x-icon" %>
     <%= stylesheet_link_tag :application, media: "all" %>
     <%= csrf_meta_tags %>
@@ -35,7 +35,6 @@
     data-kt-app-sidebar-push-toolbar="true"
     data-kt-app-sidebar-push-footer="true"
     class="app-default">
-      <!--begin::Theme mode setup on page load-->
       <script>
         var defaultThemeMode = "light";
         var themeMode;
@@ -57,39 +56,30 @@
           }
           document.documentElement.setAttribute("data-bs-theme", themeMode);
         }
-        // const checkbox = document.getElementById("checkbox")
-        // checkbox.addEventListener("change", () => {
-        //   document.body.classList.toggle("dark")
-        // })
       </script>
-      <!--end::Theme mode setup on page load-->
+      <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+          <%= render "layouts/client/header" %>
+          <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            <%= render "layouts/client/sidebar" %>
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+              <%= yield %>
+              <%= render "layouts/client/footer" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <%= render "layouts/client/modals/upgrade_plan" %>
+      <%= render "layouts/client/modals/chat" %>
 
-      <%= yield %>
+      <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-outline ki-arrow-up"></i>
+      </div>
+
       <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/plugins.bundle.js"></script>
       <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/scripts.bundle.js"></script>
-
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
-      <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/plugins/custom/datatables/datatables.bundle.js"></script>
-
-      <!--begin::Custom Javascript(used for this page only)-->
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/js/widgets.bundle.js"></script>
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/js/custom/widgets.js"></script>
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/js/custom/apps/chat/chat.js"></script>
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-      <script src="https://preview.keenthemes.com/metronic8/demo23/assets/js/custom/utilities/modals/users-search.js"></script>
-      <!--end::Custom Javascript-->
-
-      <%# <%= javascript_importmap_tags %>
+      <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/datatables.bundle.js"></script>
+      <%= javascript_importmap_tags %>
   </body>
 </html>
