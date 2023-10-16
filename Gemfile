@@ -93,7 +93,7 @@ gem 'omniauth-line'
 gem "annotate"
 
 # Render error fields
-# gem "simple_form"
+gem "simple_form"
 
 # Strip attribute before commit
 gem "strip_attributes"

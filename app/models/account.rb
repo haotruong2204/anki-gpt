@@ -48,4 +48,5 @@ class Account < ApplicationRecord
          :omniauthable, :confirmable, :validatable, omniauth_providers: [:facebook, :google_oauth2, :github, :line]
 
   has_many :histories
+  has_many :records
 end

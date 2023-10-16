@@ -38887,7 +38887,7 @@ code:not([class*="language-"]) {
   color: transparent;
 }
 .required:after {
-  content: "*";
+  content: "* bắt buộc nhập";
   position: relative;
   font-size: inherit;
   color: var(--bs-danger);
