@@ -4,4 +4,10 @@ class Client::DashboardController < Client::BaseController
   def index
     @record = Record.new
   end
+
+  def search_kanji
+  end
+
+  def translate
+  end
 end

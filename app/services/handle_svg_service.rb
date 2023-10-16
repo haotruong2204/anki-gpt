@@ -8,8 +8,6 @@ class HandleSvgService
     svg_file_path = Rails.root.join("tmp/kanji", kanji.svg)
     svg_content = File.read(svg_file_path)
     doc = Nokogiri::XML(svg_content)
-    path_elements = doc.css('path')
-
-    binding.pry
+    doc.css("path")
   end
 end

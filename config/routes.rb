@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   scope module: "client", path: "", as: "" do
     devise_for :accounts, path: "", path_names: { sign_in: "login", sign_out: "logout" }
 
-    resources :records, only: [:new, :create]
+    resources :records, only: [:new, :create, :show]
+    resources :accounts, only: [:show]
+
+    get "/search", to: "dashboard#search_kanji", as: :search_kanji
+    get "/translate", to: "dashboard#translate", as: :translate
   end
 
   namespace :admin do

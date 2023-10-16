@@ -1,0 +1,37 @@
+<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+  <% if content_for?(:breadcum_first) %>
+    <li class="breadcrumb-item text-muted">
+      <% if content_for?(:breadcum_first_link) %>
+        <%= link_to yield(:breadcum_first), yield(:breadcum_first_link), class: "text-muted text-hover-primary" %>
+      <% else %>
+        <%= yield(:breadcum_first) %>
+      <% end %>
+    </li>
+    <li class="breadcrumb-item">
+      <span class="bullet bg-gray-400 w-5px h-2px"></span>
+    </li>
+  <% end %>
+  <% if content_for?(:breadcum_second) %>
+    <li class="breadcrumb-item text-muted">
+      <% if content_for?(:breadcum_second_link) %>
+        <%= link_to yield(:breadcum_second), yield(:breadcum_second_link), class: "text-muted text-hover-primary" %>
+      <% else %>
+        <%= yield(:breadcum_second) %>
+      <% end %>
+    </li>
+  <% end %>
+  <% if content_for?(:breadcum_third) %>
+    <li class="breadcrumb-item text-muted">
+      <% if content_for?(:breadcum_third_link) %>
+        <%= link_to yield(:breadcum_third), yield(:breadcum_third_link), class: "text-muted text-hover-primary" %>
+      <% else %>
+        <%= yield(:breadcum_third) %>
+      <% end %>
+    </li>
+  <% end %>
+  <% if content_for?(:sub_breadcum_item) %>
+    <li class="breadcrumb-item text-muted">
+      <%= yield(:sub_breadcum_item) %>
+    </li>
+  <% end %>
+</ul>

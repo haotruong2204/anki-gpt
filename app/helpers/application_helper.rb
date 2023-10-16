@@ -9,4 +9,12 @@ module ApplicationHelper
   def flash_class flash_type
     FLASH_TYPE[flash_type] || flash_type.to_s
   end
+
+  def active_sidebar path, controller, action = "index"
+    if current_page?(path) || (controller_name == controller && action_name == action)
+      "active border-primary border-dashed"
+    else
+      "border-gray-200"
+    end
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: records
@@ -17,8 +19,7 @@ class Record < ApplicationRecord
 
   ATTRS = [:kanji_list, :title, :type_record].freeze
 
-  enum type_record: { option: 1, hiragana: 2, katakana: 3,  sub_kanji: 4, kanji_n5: 5, kanji_n4: 6,
-    kanji_n3: 7 }
-  
+  enum type_record: { option: 1, hiragana: 2, katakana: 3, sub_kanji: 4, kanji_n5: 5, kanji_n4: 6, kanji_n3: 7 }
+
   validates :kanji_list, presence: true
 end

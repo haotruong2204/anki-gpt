@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Client::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     @account = Account.create_from_provider_data request.env["omniauth.auth"]
@@ -20,7 +22,7 @@ class Client::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def check_errors
     if @account.try(:errors).try(:messages) && @account.errors.messages[:email] &&
-      @account.errors.messages[:email].include?(t("common.errors.dupplicate_mail"))
+       @account.errors.messages[:email].include?(t("common.errors.dupplicate_mail"))
 
       t("common.errors.dupplicate_mail")
     else

@@ -42,14 +42,14 @@
           </div>
           <div class="separator my-2"></div>
           <div class="menu-item px-5">
-            <a href="" class="menu-link px-5">Hồ sơ cá nhân</a>
+            <a href="<%= account_path(current_account) %>" class="menu-link px-5">Hồ sơ cá nhân</a>
           </div>
           <div class="menu-item px-5">
             <a href="/"
               class="menu-link px-5">
               <span class="menu-text">Lịch sử tải file</span>
               <span class="menu-badge">
-                <span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
+                <span class="badge badge-light-danger badge-circle fw-bold fs-7"><%= current_account.records.count  %></span>
               </span>
             </a>
           </div>
@@ -114,8 +114,8 @@
         >
           <div class="col mb-4">
             <a
-              href=""
-              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px border-gray-200"
+              href="<%= search_kanji_path %>"
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%= active_sidebar(search_kanji_path, "dashboard", "search_kanji") %>"
               data-kt-button="true"
             >
               <span class="mb-2">
@@ -125,8 +125,8 @@
             </a>
           </div>
           <div class="col mb-4">
-            <a href=""
-              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px border-gray-200"
+            <a href="<%= translate_path %>"
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%= active_sidebar(translate_path, "dashboard", "translate") %>"
               data-kt-button="true">
               <span class="mb-2">
                 <i class="ki-outline ki-security-check fs-1"></i>
@@ -166,7 +166,7 @@
             </a>
           </div>
           <div class="col mb-4">
-            <a href="" class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px active border-primary border-dashed"
+            <a href="<%= root_path %>" class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%= active_sidebar(root_path, "dashboard") %>"
               data-kt-button="true">
               <span class="mb-2">
                 <i class="ki-outline ki-plus fs-1"></i>
