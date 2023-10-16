@@ -46,4 +46,6 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable, :async,
          :recoverable, :rememberable, :trackable, :confirmable, :lockable,
          :omniauthable, :confirmable, :validatable, omniauth_providers: [:facebook, :google_oauth2, :github, :line]
+
+  has_many :histories
 end

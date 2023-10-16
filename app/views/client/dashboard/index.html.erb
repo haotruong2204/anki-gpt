@@ -222,19 +222,17 @@
         </div>
         <div class="col-xl-8 mb-5 mb-xl-10">
           <div class="card card-custom bg-body border-0 h-md-100">
-            <div
-              class="card-body d-flex justify-content-center flex-wrap ps-xl-15 pe-0"
-            >
+            <div class="card-body d-flex justify-content-center flex-wrap ps-xl-15 pe-0">
               <div class="flex-grow-1 mt-2 me-9 me-md-0">
-                <div
-                  class="position-relative text-gray-800 fs-1 z-index-2 fw-bold mb-5"
-                >
+                <div class="position-relative text-gray-800 fs-1 z-index-2 fw-bold mb-5">
                   Nâng cấp tài khoản
                 </div>
-                <span
-                  class="text-gray-600 fw-semibold fs-6 mb-6 d-block"
-                  >Thêm nhiều tiện ích, thêm nhiều kỹ năng <br />giúp trải nghiệm học tập tốt hơn</span
-                >
+                <span class="text-gray-600 fw-semibold fs-6 mb-6 d-block">
+                  Thêm nhiều tiện ích, thêm nhiều kỹ năng <br />giúp trải nghiệm học tập tốt hơn, <br />
+                  <span class="text-success">giảm 50% khi đăng ký bằng email edu.</span>
+
+                </span>
+
                 <div class="mb-7">
                   <a
                     href="https://luyenkanji.com/"
@@ -266,12 +264,10 @@
           <div class="card card-flush h-md-100">
             <div class="card-header pt-7">
               <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold text-gray-800"
-                  >Nhập Kanji bạn muốn tạo</span
-                >
-                <span class="text-gray-400 mt-1 fw-semibold fs-6"
-                  >Phân tách chúng bằng dấu - : ví dụ (練-習-漢-字)</span
-                >
+                <span class="card-label fw-bold text-gray-800">Nhập Kanji bạn muốn tạo</span>
+                <span class="text-gray-400 mt-1 fw-semibold fs-6">
+                  Phân tách chúng bằng dấu - : ví dụ (練-習-漢-字)
+                </span>
               </h3>
             </div>
             <div class="card-body">
@@ -280,7 +276,6 @@
                   <a
                     class="nav-link btn btn-outline btn-flex active btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
                     data-bs-toggle="pill"
-                    href="#kt_stats_widget_6_tab_3"
                   >
                     <div class="nav-icon mb-3">
                       <i class="ki-duotone ki-brush fs-1">
@@ -301,7 +296,6 @@
                   <a
                     class="nav-link btn btn-outline btn-flex btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
                     data-bs-toggle="pill"
-                    href="#kt_stats_widget_6_tab_1"
                   >
                     <div class="nav-icon mb-3">
                       <i class="ki-duotone ki-notepad fs-1">
@@ -325,7 +319,6 @@
                   <a
                     class="nav-link btn btn-outline btn-flex btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
                     data-bs-toggle="pill"
-                    href="#kt_stats_widget_6_tab_2"
                   >
                     <div class="nav-icon mb-3">
                       <i class="ki-duotone ki-notepad fs-1">
@@ -349,7 +342,23 @@
                   <a
                     class="nav-link btn btn-outline btn-flex btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
                     data-bs-toggle="pill"
-                    href="#kt_stats_widget_6_tab_3"
+                  >
+                    <div class="nav-icon mb-3">
+                      <i class="ki-outline ki-logistic fs-1"></i>
+                    </div>
+                    <span
+                      class="nav-text text-gray-800 fw-bold fs-6 lh-1"
+                      >214 Bộ thủ</span
+                    >
+                    <span
+                      class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"
+                    ></span>
+                  </a>
+                </li>
+                <li class="nav-item mb-3 me-3 me-lg-6">
+                  <a
+                    class="nav-link btn btn-outline btn-flex btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
+                    data-bs-toggle="pill"
                   >
                     <div class="nav-icon mb-3">
                       <i class="ki-outline ki-logistic fs-1"></i>
@@ -367,7 +376,6 @@
                   <a
                     class="nav-link btn btn-outline btn-flex btn-color-muted btn-active-color-primary flex-column overflow-hidden w-100px h-85px pt-5 pb-2"
                     data-bs-toggle="pill"
-                    href="#kt_stats_widget_6_tab_3"
                   >
                     <div class="nav-icon mb-3">
                       <i class="ki-outline ki-logistic fs-1"></i>
@@ -382,6 +390,31 @@
                   </a>
                 </li>
               </ul>
+              <div class="form-floating">
+                <textarea class="form-control form-control-solid" id="floatingTextarea1" style="height: 150px"></textarea>
+                <label for="floatingTextarea1">Nhập Kanji</label>
+              </div>
+              <div class="input-group mb-5 pt-7">
+                <span class="input-group-text" id="basic-addon3">
+                  <i class="ki-duotone ki-crown-2 fs-1">
+                    <span class="path1"></span>
+                    <span class="path2"></span>
+                    <span class="path3"></span>
+                  </i>
+                </span>
+                <input disabled type="text" class="form-control" id="basic-url"  placeholder="Dấu ấn cá nhân" aria-describedby="basic-addon3" value="luyenkanji.com | @thocodehoctiengnhat"/>
+              </div>
+
+              <a href="#" class="btn btn-primary">
+                <i class="ki-duotone ki-click fs-1">
+                  <span class="path1"></span>
+                  <span class="path2"></span>
+                  <span class="path3"></span>
+                  <span class="path4"></span>
+                  <span class="path5"></span>
+                </i>
+                Tạo PDF
+              </a>
             </div>
           </div>
         </div>
