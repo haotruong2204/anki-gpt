@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     get "/search", to: "dashboard#search_kanji", as: :search_kanji
     get "/translate", to: "dashboard#translate", as: :translate
+    get "/podcast", to: "dashboard#podcast", as: :podcast
   end
 
   namespace :admin do

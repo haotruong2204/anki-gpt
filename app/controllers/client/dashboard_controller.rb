@@ -10,4 +10,7 @@ class Client::DashboardController < Client::BaseController
 
   def translate
   end
+  
+  def podcast
+  end
 end

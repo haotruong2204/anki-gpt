@@ -1,0 +1,621 @@
+<%= content_for :breadcum_first, "Trang chủ" %>
+<%= content_for :breadcum_first_link, root_path %>
+<%= content_for :breadcum_second, "Podcast" %>
+
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+  <div class="d-flex flex-column flex-column-fluid">
+    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-0">
+      <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <div class="page-title d-flex flex-column justify-content-center me-3">
+          <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+            Podcast
+          </h1>
+         <%= render "layouts/breadcrumb" %>
+        </div>
+      </div>
+    </div>
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+      <div
+        id="kt_app_content_container"
+        class="app-container container-xxl"
+      >
+        <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+          <div class="col-xl-8">
+            <div
+              class="card flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100"
+              style="
+                background-color: #020202;
+                background-image: url('<%= asset_path("media/stock/600x600/img-62.jpg") %>');
+              "
+            >
+              <div
+                class="card-body d-flex justify-content-between flex-column ps-xl-18"
+              >
+                <div class="mb-20 pt-xl-13">
+                  <h3 class="fw-bold text-white fs-4x mb-5 ms-n1">
+                    Utah Case
+                  </h3>
+                  <span
+                    class="fw-bold text-white fs-4 mb-8 d-block lh-0"
+                    >with Kristin Watson</span
+                  >
+                  <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center me-6">
+                      <a href="#" class="me-2">
+                        <i
+                          class="bi bi-play-fill text-primary fs-3"
+                        ></i>
+                      </a>
+                      <span class="fw-semibold text-white fs-6"
+                        >70,000+ plays</span
+                      >
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <a href="#" class="me-2">
+                        <i
+                          class="bi bi-headset text-primary fs-3"
+                        ></i>
+                      </a>
+                      <span class="fw-semibold text-white fs-6"
+                        >372 listening now</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div
+              class="card card-flush h-xl-100"
+              id="kt_player_widget_2"
+            >
+              <div class="card-header bg-black">
+                <h3 class="card-title fw-bold text-white">Player</h3>
+                <div class="card-toolbar">
+                  <button
+                    class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end"
+                    data-kt-menu-trigger="click"
+                    data-kt-menu-placement="bottom-end"
+                    data-kt-menu-overflow="true"
+                  >
+                    <i
+                      class="ki-outline ki-dots-square fs-1 text-white"
+                    ></i>
+                  </button>
+                  <div
+                    class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px"
+                    data-kt-menu="true"
+                  >
+                    <div class="menu-item px-3">
+                      <div
+                        class="menu-content fs-6 text-dark fw-bold px-3 py-4"
+                      >
+                        Quick Actions
+                      </div>
+                    </div>
+                    <div class="separator mb-3 opacity-75"></div>
+                    <div class="menu-item px-3">
+                      <a href="#" class="menu-link px-3"
+                        >New Ticket</a
+                      >
+                    </div>
+                    <div class="menu-item px-3">
+                      <a href="#" class="menu-link px-3"
+                        >New Customer</a
+                      >
+                    </div>
+                    <div
+                      class="menu-item px-3"
+                      data-kt-menu-trigger="hover"
+                      data-kt-menu-placement="right-start"
+                    >
+                      <a href="#" class="menu-link px-3">
+                        <span class="menu-title">New Group</span>
+                        <span class="menu-arrow"></span>
+                      </a>
+                      <div
+                        class="menu-sub menu-sub-dropdown w-175px py-4"
+                      >
+                        <div class="menu-item px-3">
+                          <a href="#" class="menu-link px-3"
+                            >Admin Group</a
+                          >
+                        </div>
+                        <div class="menu-item px-3">
+                          <a href="#" class="menu-link px-3"
+                            >Staff Group</a
+                          >
+                        </div>
+                        <div class="menu-item px-3">
+                          <a href="#" class="menu-link px-3"
+                            >Member Group</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="menu-item px-3">
+                      <a href="#" class="menu-link px-3"
+                        >New Contact</a
+                      >
+                    </div>
+                    <div class="separator mt-3 opacity-75"></div>
+                    <div class="menu-item px-3">
+                      <div class="menu-content px-3 py-3">
+                        <a
+                          class="btn btn-primary btn-sm px-4"
+                          href="#"
+                          >Generate Reports</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body bg-black pt-0">
+                <div
+                  class="mx-auto mb-6 bgi-no-repeat bgi-size-contain bgi-position-center rounded-circle w-125px h-125px"
+                  style="
+                    background-image: url('<%= asset_path("media/stock/600x600/img-59.jpg") %>');
+                  "
+                ></div>
+                <div class="text-center mb-5">
+                  <h1 class="text-white fw-bold">Strange Friends</h1>
+                  <span class="text-white opacity-75 fw-semibold"
+                    >Theresa Webb</span
+                  >
+                </div>
+              </div>
+              <div class="card-footer bg-primary p-0 pb-9">
+                <div class="mt-n10">
+                  <div class="mb-5">
+                    <div
+                      class="d-flex flex-stack px-4 text-white opacity-75"
+                    >
+                      <span
+                        class="current-time"
+                        data-kt-element="current-time"
+                        >0:00</span
+                      >
+                      <span
+                        class="duration"
+                        data-kt-element="duration"
+                        >0:00</span
+                      >
+                    </div>
+                    <input
+                      type="range"
+                      class="form-range"
+                      data-kt-element="progress"
+                      min="0"
+                      max="100"
+                      value="0"
+                      step="0.01"
+                    />
+                  </div>
+                  <div class="d-flex flex-center">
+                    <button
+                      class="btn btn-icon mx-1"
+                      data-kt-element="replay-button"
+                    >
+                      <i
+                        class="bi bi-arrow-repeat fs-2 text-white"
+                      ></i>
+                    </button>
+                    <button
+                      class="btn btn-icon mx-1"
+                      data-kt-element="play-prev-button"
+                    >
+                      <i
+                        class="bi bi-caret-left-fill fs-2 text-white"
+                      ></i>
+                    </button>
+                    <button
+                      class="btn btn-icon mx-6 play-pause"
+                      data-kt-element="play-button"
+                    >
+                      <i
+                        class="bi bi-play-fill text-white fs-4x"
+                        data-kt-element="play-icon"
+                      ></i>
+                      <i
+                        class="bi bi-pause-fill text-white fs-4x d-none"
+                        data-kt-element="pause-icon"
+                      ></i>
+                    </button>
+                    <button
+                      class="btn btn-icon mx-1 next"
+                      data-kt-element="play-next-button"
+                    >
+                      <i
+                        class="bi bi-caret-right-fill fs-2 text-white"
+                      ></i>
+                    </button>
+                    <button
+                      class="btn btn-icon mx-1"
+                      data-kt-element="shuffle-button"
+                    >
+                      <i class="bi bi-shuffle fs-2 text-white"></i>
+                    </button>
+                  </div>
+                  <audio data-kt-element="audio-track-1">
+                    <source
+                      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+                      type="audio/mpeg"
+                    />
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+          <div class="col-xl-8">
+            <div class="card card-flush h-xl-100">
+              <div class="card-header pt-7">
+                <h3 class="card-title align-items-start flex-column">
+                  <span class="card-label fw-bold text-dark"
+                    >Recently Played</span
+                  >
+                  <span class="text-gray-400 mt-1 fw-semibold fs-6"
+                    >Updated 37 minutes ago</span
+                  >
+                </h3>
+                <div class="card-toolbar">
+                  <a
+                    href="../../demo23/dist/account/statements.html"
+                    class="btn btn-sm btn-light"
+                    >History</a
+                  >
+                </div>
+              </div>
+              <div class="card-body pt-7">
+                <div class="row g-5 g-xl-9 mb-5 mb-xl-9">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-60.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Daily Podcast</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Darlene Robertson</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-60.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Neon Lights</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Wade Warren</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-62.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Single Eye</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Robert Fox</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-46.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Radiohead</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Jacob Jones</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-5 g-xl-9 mb-xl-3">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-47.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >It is what it is</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Jane Cooper</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-49.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Broken Mirros</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Jenny Wilson</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-57.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >The Hood</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Albert Flores</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="m-0">
+                      <div
+                        class="card-rounded position-relative mb-5"
+                      >
+                        <div
+                          class="bgi-position-center bgi-no-repeat bgi-size-cover h-200px card-rounded"
+                          style="
+                            background-image: url('<%= asset_path("media/stock/600x600/img-60.jpg") %>');
+                          "
+                        ></div>
+                        <button
+                          class="btn btn-icon h-auto w-auto p-0 ms-4 mb-4 position-absolute bottom-0 right-0"
+                          data-kt-element="list-play-button"
+                        >
+                          <i
+                            class="bi bi-play-fill text-white fs-2x"
+                            data-kt-element="list-play-icon"
+                          ></i>
+                          <i
+                            class="bi bi-pause-fill text-white fs-2x d-none"
+                            data-kt-element="list-pause-icon"
+                          ></i>
+                        </button>
+                      </div>
+                      <div class="m-0">
+                        <a
+                          href="#"
+                          class="text-gray-800 text-hover-primary fs-3 fw-bold d-block mb-2"
+                          >Cirle Lights</a
+                        >
+                        <span
+                          class="fw-bold fs-6 text-gray-400 d-block lh-1"
+                          >Dianne Russell</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="card h-md-100" dir="ltr">
+              <div class="card-body d-flex flex-column flex-center">
+                <div class="mb-2">
+                  <h1 class="fw-semibold text-gray-800 text-center lh-lg">
+                    Nếu có <span class="fw-bolder">Podcast hay</span> 
+                    <br />
+                    gửi cho bọn mình xin nhé!
+                  </h1>
+                  <div class="py-10 text-center">
+                    <img
+                      src="<%= asset_path("media/svg/illustrations/easy/2.svg") %>"
+                      class="theme-light-show h-125px"
+                      alt=""
+                    />
+                    <img
+                      src="<%= asset_path("media/svg/illustrations/easy/2-dark.svg") %>"
+                      class="theme-dark-show h-125px"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="text-center mb-1"> 
+                  <a class="btn btn-sm btn-primary me-2" href="/">Góp ý 
+                    <i class="ki-duotone ki-send">
+                      <span class="path1"></span>
+                      <span class="path2"></span>
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

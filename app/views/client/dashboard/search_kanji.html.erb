@@ -1,7 +1,208 @@
-<div class="d-flex flex-column flex-column-fluid">
-  <div id="kt_app_content" class="app-content flex-column-fluid">
-    <div id="kt_app_content_container" class="app-container container-xxl">
-      search
+<%= content_for :breadcum_first, "Trang chủ" %>
+<%= content_for :breadcum_first_link, root_path %>
+<%= content_for :breadcum_second, "Tìm kanji" %>
+
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+  <div class="d-flex flex-column flex-column-fluid">
+    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-0">
+      <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+        <div class="page-title d-flex flex-column justify-content-center me-3">
+          <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Tìm kiếm</h1>
+          <%= render "layouts/breadcrumb" %>
+        </div>
+      </div>
+    </div>
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+      <div id="kt_app_content_container" class="app-container container-xxl">
+        <div class="d-flex flex-column flex-lg-row">
+          <div class="flex-column flex-lg-row-auto w-100 w-lg-250px w-xxl-325px mb-8 mb-lg-0 me-lg-9 me-5">
+            <form action="#">
+              <div class="card">
+                <div class="card-body">
+                  <div class="position-relative">
+                    <i class="ki-outline ki-magnifier fs-3 text-gray-500 position-absolute top-50 translate-middle ms-6"></i>
+                    <input
+                      type="text"
+                      class="form-control form-control-solid ps-10"
+                      name="search"
+                      value=""
+                      placeholder="Search"
+                    />
+                  </div>
+                  <div class="separator separator-dashed my-8"></div>
+                  <div class="mb-5">
+                    <label class="fs-6 form-label fw-bold text-dark"
+                      >Team Type</label
+                    >
+                    <select
+                      class="form-select form-select-solid"
+                      data-control="select2"
+                      data-placeholder="In Progress"
+                      data-hide-search="true"
+                    >
+                      <option value=""></option>
+                      <option value="1">Not Started</option>
+                      <option value="2" selected="selected">
+                        In Progress
+                      </option>
+                      <option value="3">Done</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="pt-10">
+              <div class="card h-md-100" dir="ltr">
+                <div class="card-body d-flex flex-column flex-center">
+                  <div class="mb-2">
+                    <h3 class="fw-semibold text-gray-800 text-center lh-lg">
+                      Nếu có <span class="fw-bolder">Phương pháp</span><br />
+                      học kanji hiệu quả thì gửi cho bọn mình xin nhé!
+                    </h3>
+                    <div class="py-10 text-center">
+                      <img
+                        src="<%= asset_path("media/svg/illustrations/easy/2.svg") %>"
+                        class="theme-light-show h-125px"
+                        alt=""
+                      />
+                      <img
+                        src="<%= asset_path("media/svg/illustrations/easy/2-dark.svg") %>"
+                        class="theme-dark-show h-125px"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="text-center mb-1"> 
+                    <a class="btn btn-sm btn-primary me-2" href="/">Góp ý 
+                      <i class="ki-duotone ki-send">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                      </i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex-lg-row-fluid">
+            <div class="d-flex flex-wrap flex-stack pb-7">
+              <div class="d-flex flex-wrap align-items-center my-1">
+                <h3 class="fw-bold me-5 my-1">
+                  Chi tiết chữ Kanji
+                  <span class="text-gray-600 fs-6">Phương pháp nhớ theo đóng góp từ người dùng ↓</span>
+                </h3>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div id="kt_project_users_card_pane" class="tab-pane fade show active">
+                <div class="row g-6 g-xl-9">
+                  <div class="col-md-12 col-xl-12 col-xxl-12">
+                    <div class="card">
+                      <div class="card-body pt-12 p-9">
+                        <div class="row">
+                          <div class="col-md-5 col-xl-12 col-xxl-5">
+                            <div class="row mb-7">
+                              <label class="col-lg-4 fw-semibold text-muted">Hán Tự</label>
+                              <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">語</span>
+                                <span class="badge badge-success">NGỮ</span>
+                              </div>
+                            </div>
+                            <div class="row mb-7">
+                              <label class="col-lg-4 fw-semibold text-muted">
+                                Âm Kun
+                                <span class="ms-1" data-bs-toggle="tooltip" title="例: 語 - かたり: Phút">
+                                  <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                              </label>
+                              <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">かた</span>
+                              </div>
+                            </div>
+                            <div class="row mb-7">
+                              <label class="col-lg-4 fw-semibold text-muted">
+                                Âm Ôn
+                                <span class="ms-1" data-bs-toggle="tooltip" title="例: 日本語 - にほんご: tiếng nhật">
+                                  <i class="ki-outline ki-information fs-7"></i>
+                                </span>
+                              </label>
+                              <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">ご</span>
+                              </div>
+                            </div>
+                            <div class="row mb-7">
+                              <label class="col-lg-4 fw-semibold text-muted">
+                                Số nét
+                              </label>
+                              <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">14</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-7 col-xl-12 col-xxl-7 d-flex justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="350" height="350" viewBox="0 0 109 109" id="kanji-svg">
+                              <g xmlns:kvg="http://kanjivg.tagaini.net" id="kvg:StrokePaths_08a9e" style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">
+                              <g id="kvg:08a9e" kvg:element="語">
+                                <g id="kvg:08a9e-g1" kvg:element="言" kvg:position="left" kvg:radical="general">
+                                  <path id="kvg:08a9e-s1" kvg:type="㇔" d="M26,15.25c2.82,1.41,7.29,5.8,8,8" style="stroke: rgb(34, 85, 51);"></path>
+                                  <path id="kvg:08a9e-s2" kvg:type="㇐" d="M12.37,32.97c1.25,0.28,2.88,0.66,4.36,0.53c7.02-0.59,17.78-1.75,25.95-3c1.52-0.23,3.57-0.38,5.16,0.03" style="stroke: rgb(51, 153, 170);"></path>
+                                  <path id="kvg:08a9e-s3" kvg:type="㇐" d="M18.73,45.76c0.38,0.18,2.71,0.2,3.1,0.18c3.97-0.21,9.79-1.19,14.46-2.31c1.67-0.4,2.71-0.38,3.86-0.08" style="stroke: rgb(102, 170, 0);"></path>
+                                  <path id="kvg:08a9e-s4" kvg:type="㇐" d="M18.73,58.89c0.89,0.23,1.89,0.36,3.35,0.15c3.89-0.54,10.71-1.51,14.85-2.29c0.7-0.13,1.82-0.26,2.61-0.1" style="stroke: rgb(68, 17, 187);"></path>
+                                  <g id="kvg:08a9e-g2" kvg:element="口">
+                                    <path id="kvg:08a9e-s5" kvg:type="㇑" d="M17.14,71.9c0.63,0.62,1.12,1.65,1.23,2.57c0.63,5.03,1.51,10.28,2.23,15.59c0.14,1.03,0.27,2.02,0.41,2.93" style="stroke: rgb(85, 102, 68);"></path>
+                                    <path id="kvg:08a9e-s6" kvg:type="㇕b" d="M19.37,73.6c5.67-0.94,15.47-2.73,20.36-3.48c1.49-0.22,2.39,1.05,2.18,2.08c-0.71,3.44-2.27,9.75-3.23,13.89" style="stroke: rgb(85, 85, 119);"></path>
+                                    <path id="kvg:08a9e-s7" kvg:type="㇐b" d="M21.47,89.02c3.95-0.45,10.71-1.19,16.28-1.61c1.21-0.09,2.36-0.17,3.41-0.22" style="stroke: rgb(187, 0, 119);"></path>
+                                  </g>
+                                </g>
+                                <g id="kvg:08a9e-g3" kvg:element="吾" kvg:position="right" kvg:phon="吾">
+                                  <g id="kvg:08a9e-g4" kvg:element="五">
+                                    <g id="kvg:08a9e-g5" kvg:element="二" kvg:part="1">
+                                      <path id="kvg:08a9e-s8" kvg:type="㇐" d="M51.79,17.49c1.38,0.26,3.91,0.28,5.27,0.15C63.88,17,72.62,15.62,80,15.32c2.3-0.1,3.67,0.04,4.81,0.15" style="stroke: rgb(102, 170, 34);"></path>
+                                    </g>
+                                    <path id="kvg:08a9e-s9" kvg:type="㇑a" d="M67.75,20.25c0.37,1.25,0.5,2.38,0.23,3.75c-0.75,3.78-6.03,23.83-7.96,31.58" style="stroke: rgb(153, 17, 34);"></path>
+                                    <path id="kvg:08a9e-s10" kvg:type="㇕c" d="M52.18,36.96c1.82,0.66,4.17,0.95,5.84,0.66c8.48-1.5,16.13-3.06,22.74-4.1c2.49-0.39,4.05,1.27,3.71,2.93c-0.6,2.93-2.48,11.43-3.74,17.86" style="stroke: rgb(51, 51, 153);"></path>
+                                    <g id="kvg:08a9e-g6" kvg:element="二" kvg:part="2">
+                                      <path id="kvg:08a9e-s11" kvg:type="㇐" d="M46.33,58.46c1.13,0.24,3.94,0.2,5.07,0.08c12.34-1.29,19.11-2.39,40.88-4.02c1.88-0.14,3.75-0.02,4.69,0.09" style="stroke: rgb(17, 170, 68);"></path>
+                                    </g>
+                                  </g>
+                                  <g id="kvg:08a9e-g7" kvg:element="口">
+                                    <path id="kvg:08a9e-s12" kvg:type="㇑" d="M52.5,69.88c0.93,0.93,1.42,2.28,1.54,3.31c0.71,6.06,1.42,12.65,2.06,19.3c0.15,1.5,0.28,2.44,0.4,3.75" style="stroke: rgb(170, 102, 17);"></path>
+                                    <path id="kvg:08a9e-s13" kvg:type="㇕b" d="M54.99,71.67c9.47-1.45,23.75-3.41,28.85-3.9c2.14-0.21,3.28,0.98,2.86,2.93c-0.84,3.88-3.08,12.57-4.39,17.58" style="stroke: rgb(102, 17, 34);"></path>
+                                    <path id="kvg:08a9e-s14" kvg:type="㇐b" d="M57.2,91.49c5.94-0.55,14.67-1.24,23.54-1.76c1.3-0.08,2.63-0.13,3.97-0.2" style="stroke: rgb(136, 102, 68);"></path>
+                                  </g>
+                                </g>
+                              </g>
+                              </g>
+                              <g xmlns:kvg="http://kanjivg.tagaini.net" id="kvg:StrokeNumbers_08a9e" style="font-size:8;fill:#808080">
+                                <text transform="matrix(1 0 0 1 20.25 13.63)" style="fill: rgb(34, 85, 51);">1</text>
+                                <text transform="matrix(1 0 0 1 3.75 33.13)" style="fill: rgb(51, 153, 170);">2</text>
+                                <text transform="matrix(1 0 0 1 9.75 45.13)" style="fill: rgb(102, 170, 0);">3</text>
+                                <text transform="matrix(1 0 0 1 9.75 58.63)" style="fill: rgb(68, 17, 187);">4</text>
+                                <text transform="matrix(1 0 0 1 9.75 73.63)" style="fill: rgb(85, 102, 68);">5</text>
+                                <text transform="matrix(1 0 0 1 20.25 70.63)" style="fill: rgb(85, 85, 119);">6</text>
+                                <text transform="matrix(1 0 0 1 24.75 85.63)" style="fill: rgb(187, 0, 119);">7</text>
+                                <text transform="matrix(1 0 0 1 50.25 13.63)" style="fill: rgb(102, 170, 34);">8</text>
+                                <text transform="matrix(1 0 0 1 74.25 25.63)" style="fill: rgb(153, 17, 34);">9</text>
+                                <text transform="matrix(1 0 0 1 51.75 34.63)" style="fill: rgb(51, 51, 153);">10</text>
+                                <text transform="matrix(1 0 0 1 47.25 54.13)" style="fill: rgb(17, 170, 68);">11</text>
+                                <text transform="matrix(1 0 0 1 44.25 85.63)" style="fill: rgb(170, 102, 17);">12</text>
+                                <text transform="matrix(1 0 0 1 56.25 67.63)" style="fill: rgb(102, 17, 34);">13</text>
+                                <text transform="matrix(1 0 0 1 60.75 87.13)" style="fill: rgb(136, 102, 68);">14</text>
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <%= render "comment" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

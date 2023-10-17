@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_16_152023) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_061403) do
   create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -109,6 +109,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_152023) do
     t.text "description"
     t.integer "account_id"
     t.integer "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kanji_learning_methods", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "kanji_id"
+    t.text "content"
+    t.integer "account_id"
+    t.integer "total_like", default: 0
+    t.integer "total_unlike", default: 0
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
