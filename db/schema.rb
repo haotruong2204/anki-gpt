@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_061403) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_090130) do
   create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -111,6 +111,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_061403) do
     t.integer "plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "record_id"
   end
 
   create_table "kanji_learning_methods", charset: "utf8mb4", force: :cascade do |t|
@@ -142,6 +143,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_061403) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "name"
+    t.index ["slug"], name: "index_records_on_slug", unique: true
   end
 
 end

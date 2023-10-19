@@ -1,7 +1,64 @@
 <div class="d-flex flex-column flex-column-fluid">
   <div id="kt_app_content" class="app-content flex-column-fluid">
     <div id="kt_app_content_container" class="app-container container-xxl">
-      show pdf
+       <div class="card">
+          <div class="card-body pt-12 p-9">
+            <% @list_path.each do |paths| %>
+              <div class="d-flex align-items-center me-4">
+                <div class="d-flex align-items-center me-7">
+                  <div class="yin-han fs-2 me-3">
+                    <%= paths[:yin_han] %>
+                  </div>
+                  <div class="on-kun">
+                    <div class="meaning">Nghĩa: <%= paths[:meaning] %></div>
+                    <div class="on">On: <%= paths[:on] %></div>
+                    <div class="kun">Kun: <%= paths[:kun] %></div>
+                  </div>
+                </div>
+                <div>
+                  <% paths[:paths].each_with_index do |item, i| %>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 109 109">
+                      <g xmlns:kvg="http://luyenkanji.com/" style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">
+                        <% paths[:paths][0..i].each do |path| %>
+                          <path d="<%= path %>"/>
+                        <% end %>
+                      </g>
+                    </svg>
+                  <% end %>
+                </div>
+              </div>
+
+              <ul class="d-flex mb-5">
+                <li class="kj-line">
+                  <span class="b" style="background: url(<%= asset_path("media/svg/custom/line-first.svg") %>) center center no-repeat;">
+                    <img width="66" src="<%= asset_path("kanji/#{paths[:kanji]}") %>" alt="">
+                  </span>
+                </li>
+                <% 14.times do %>
+                  <li class="kj-line">
+                    <span class="b" style="background: url(<%= asset_path("media/svg/custom/line.svg") %>) center center no-repeat;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 109 109">
+                        <g xmlns:kvg="http://luyenkanji.com/" style="fill:none;stroke:#a0a0a0;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;">
+                          <% paths[:paths].each do |path| %>
+                            <path d="<%= path %>"/>
+                          <% end %>
+                        </g>
+                      </svg>
+                    </span>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+
+            <a href="#" class="btn btn-primary">
+              <i class="ki-duotone ki-file-down fs-2">
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </i>
+              Tải xuống PDF
+            </a>
+          </div>
+        </div>
     </div>
   </div>
 </div>

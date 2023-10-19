@@ -2,30 +2,85 @@
 <html lang="vi">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Đăng Nhập | Luyenkanji.com - Ứng dụng luyện Kanji theo nét viết tay</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="thocodehoctiengnhat">
+    <meta name="description" content="Chào mừng bạn đến với website chia sẻ tài liệu luyện viết Kanji - nguồn tài liệu học tập tốt nhất dành cho những ai đang bắt đầu khám phá thế giới phức tạp của Kanji. Tại đây, chúng tôi cung cấp một công cụ tạo chữ hán chất lượng cao. Hãy bắt đầu cùng chúng tôi để tìm hiểu, thực hành và nắm vững các cấu tạo của mọi Kanji.">
+    <meta name="keywords" content="luyện kanji, file luyện kanji, N5, N4, N3, N2, N1, Hiragana, Katakana, Hán tự, Học kanji"/>
+    <meta property="og:locale" content="vi-VN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Luyenkanji.com - Nền tảng chia sẻ phương pháp học kanji by tiktokID @thocodehoctiengnhat"/>
+    <meta property="fb:app_id" content="" />
+    <meta content='Chào mừng bạn đến với website chia sẻ tài liệu luyện viết Kanji - nguồn tài liệu học tập tốt nhất dành cho những ai đang bắt đầu khám phá thế giới phức tạp của Kanji. Tại đây, chúng tôi cung cấp một công cụ tạo chữ hán chất lượng cao. Hãy bắt đầu cùng chúng tôi để tìm hiểu, thực hành và nắm vững các cấu tạo của mọi Kanji.' property='og:description'>
+    <meta content='' property='og:image'>
+    <meta content='vi_VN' property='og:locale'>
+    <meta content='thocodehoctiengnhat' property='og:site_name'>
+    <meta content='website' property='og:type'>
+    <meta content='https://luyenkanji.com/' property='og:url'>
+    <meta content='https://luyenkanji.com' property='og:see_also'>
+    <title>Admin | Luyenkanji.com - Ứng dụng luyện Kanji theo nét viết tay</title>
     <%= favicon_link_tag asset_path("favicon.svg"), rel: "icon", type: "image/x-icon" %>
     <%= stylesheet_link_tag :application, media: "all" %>
-    <%= javascript_include_tag Ckeditor.cdn_url %>
-    <%= javascript_importmap_tags %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="google" content="notranslate">
   </head>
 
-  <body>
-    <%= render "shared/flash" %>
-    <div class="wrapper">
-      <div class="section-left">
-        <%= render "layouts/admin/sidebar" %>
-      </div>
-      <div class="section-right">
-        <%= render "layouts/admin/header" %>
-        <div class="main">
-          <%= yield %>
+  <body
+    id="kt_app_body"
+    data-kt-app-sidebar-enabled="true"
+    data-kt-app-sidebar-fixed="true"
+    data-kt-app-sidebar-push-header="true"
+    data-kt-app-sidebar-push-toolbar="true"
+    data-kt-app-sidebar-push-footer="true"
+    class="app-default">
+      <script>
+        var defaultThemeMode = "light";
+        var themeMode;
+        if (document.documentElement) {
+          if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+            themeMode =
+              document.documentElement.getAttribute("data-bs-theme-mode");
+          } else {
+            if (localStorage.getItem("data-bs-theme") !== null) {
+              themeMode = localStorage.getItem("data-bs-theme");
+            } else {
+              themeMode = defaultThemeMode;
+            }
+          }
+          if (themeMode === "system") {
+            themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+      </script>
+      <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+          <%= render "shared/flash" %>
+          <%= render "layouts/admin/header" %>
+          <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            <%= render "layouts/admin/sidebar" %>
+            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+              <%= yield %>
+              <%= render "layouts/admin/footer" %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      
+      <%# <%= render "layouts/client/modals/upgrade_plan" %>
+      <%# <%= render "layouts/client/modals/chat" %>
+
+      <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-outline ki-arrow-up"></i>
+      </div>
+
+      <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/plugins.bundle.js"></script>
+      <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/scripts.bundle.js"></script>
+      <script src="https://haotv.s3.ap-southeast-1.amazonaws.com/datatables.bundle.js"></script>
+      <%= javascript_importmap_tags %>
   </body>
 </html>

@@ -17,4 +17,8 @@ module ApplicationHelper
       "border-gray-200"
     end
   end
+
+  def get_path_record id
+    record_path Record.find id
+  end
 end

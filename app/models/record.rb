@@ -6,13 +6,22 @@
 #
 #  id          :bigint           not null, primary key
 #  kanji_list  :text(65535)
+#  name        :string(255)
+#  slug        :string(255)
 #  title       :string(255)
 #  type_record :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  account_id  :integer
 #
+# Indexes
+#
+#  index_records_on_slug  (slug) UNIQUE
+#
 class Record < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   strip_attributes
 
   belongs_to :account

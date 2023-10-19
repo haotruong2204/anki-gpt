@@ -1,1 +1,157 @@
-sidebar
+<div
+  id="kt_app_sidebar"
+  class="app-sidebar flex-column"
+  data-kt-drawer="true"
+  data-kt-drawer-name="app-sidebar"
+  data-kt-drawer-activate="{default: true, lg: false}"
+  data-kt-drawer-overlay="true"
+  data-kt-drawer-width="275px"
+  data-kt-drawer-direction="start"
+  data-kt-drawer-toggle="#kt_app_sidebar_toggle">
+  <div
+    class="d-flex flex-stack px-4 px-lg-6 py-3 py-lg-8"
+    id="kt_app_sidebar_logo">
+    <a href="/">
+      <img alt="Logo" src="<%= asset_path("media/logos/kanji-admin.svg")%>" class="h-20px h-lg-25px theme-light-show" />
+      <img alt="Logo" src="<%= asset_path("media/logos/kanji-admin-dark.svg")%>" class="h-20px h-lg-25px theme-dark-show"/>
+    </a>
+    <% if admin_admin_signed_in? %>
+      <div class="ms-3">
+        <div class="cursor-pointer position-relative symbol symbol-circle symbol-40px"
+          data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+          data-kt-menu-attach="parent"
+          data-kt-menu-placement="bottom-end">
+          <img src="<%= asset_path("media/avatars/blank.png") %>" alt="user" />
+          <div class="position-absolute rounded-circle bg-success start-100 top-100 h-8px w-8px ms-n3 mt-n3"></div>
+        </div>
+        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
+          data-kt-menu="true">
+          <div class="menu-item px-3">
+            <div class="menu-content d-flex align-items-center px-3">
+              <div class="symbol symbol-50px me-5">
+                <img alt="Logo" src="<%= asset_path("media/avatars/blank.png") %>" />
+              </div>
+              <div class="d-flex flex-column">
+                <div class="fw-bold d-flex align-items-center fs-5">
+                  <%= current_admin_admin.full_name %>
+                  <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
+                </div>
+                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7"><%= current_admin_admin.email %></a>
+              </div>
+            </div>
+          </div>
+          <div class="separator my-2"></div>
+          <div class="menu-item px-5">
+            <a href="<%#= admin_path(current_admin_admin) %>" class="menu-link px-5">Hồ sơ cá nhân</a>
+          </div>
+          <div class="menu-item px-5">
+            <a href="/"
+              class="menu-link px-5">
+              <span class="menu-text">Lịch sử tải file</span>
+              <span class="menu-badge">
+                <span class="badge badge-light-danger badge-circle fw-bold fs-7">1<%#= current_admin_admin.records.count  %></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="flex-column-fluid px-4 px-lg-8 py-4" id="kt_app_sidebar_nav">
+    <div id="kt_app_sidebar_nav_wrapper"
+        class="d-flex flex-column hover-scroll-y pe-4 me-n4"
+        data-kt-scroll="true"
+        data-kt-scroll-activate="true"
+        data-kt-scroll-height="auto"
+        data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
+        data-kt-scroll-wrappers="#kt_app_sidebar, #kt_app_sidebar_nav"
+        data-kt-scroll-offset="5px">
+      <div class="mb-6">
+        <h3 class="text-gray-800 fw-bold mb-8">Quản lý</h3>
+        <div
+          class="row row-cols-3"
+          data-kt-buttons="true"
+          data-kt-buttons-target="[data-kt-button]"
+        >
+          <div class="col mb-4">
+            <a
+              href="<%#= search_kanji_path %>"
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%#= active_sidebar(search_kanji_path, "dashboard", "search_kanji") %>"
+              data-kt-button="true"
+            >
+              <span class="mb-2">
+                <i class="ki-outline ki-calendar fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Tìm Kanji</span>
+            </a>
+          </div>
+          <div class="col mb-4">
+            <a href="<%#= translate_path %>"
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%#= active_sidebar(translate_path, "dashboard", "translate") %>"
+              data-kt-button="true">
+              <span class="mb-2">
+                <i class="ki-outline ki-security-check fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Dịch bằng AI</span>
+            </a>
+          </div>
+          <div class="col mb-4">
+            <a href="<%= podcast_path %>"
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px  <%#= active_sidebar(podcast_path, "dashboard", "podcast") %>"
+              data-kt-button="true">
+              <span class="mb-2">
+                <i class="ki-outline ki-wifi-square fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Nghe hiểu</span>
+            </a>
+          </div>
+          <div class="col mb-4">
+            <a
+              href=""
+              class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px border-gray-200"
+              data-kt-button="true"
+            >
+              <span class="mb-2">
+                <i class="ki-outline ki-chart-line-up-2 fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Đọc hiểu</span>
+            </a>
+          </div>
+          <div class="col mb-4">
+            <a href="" class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px border-gray-200"
+              data-kt-button="true">
+              <span class="mb-2">
+                <i class="ki-outline ki-shield-tick fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Thảo luận</span>
+            </a>
+          </div>
+          <div class="col mb-4">
+            <a href="<%= admin_root_path %>" class="btn btn-icon btn-outline btn-bg-light btn-active-light-primary btn-flex flex-column flex-center w-lg-90px h-lg-90px w-70px h-70px <%#= active_sidebar(root_path, "dashboard") %>"
+              data-kt-button="true">
+              <span class="mb-2">
+                <i class="ki-outline ki-plus fs-1"></i>
+              </span>
+              <span class="fs-7 fw-bold">Mở rộng</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="aside-footer flex-column-auto px-4 px-lg-8 py-3 py-lg-8" id="kt_app_sidebar_footer">
+    <div class="d-flex flex-stack">
+      <% if admin_admin_signed_in? %>
+        <div class="ms-7">
+            <%= link_to destroy_admin_admin_session_path, class: "btn btn-sm btn-icon btn-active-color-primary btn-icon-gray-600 btn-text-gray-600" do %>
+              <i class="ki-duotone ki-entrance-left fs-1 me-2"><span class="path1"></span><span class="path2"></span></i>
+              <span class="d-flex flex-shrink-0 fw-bold">Đăng xuất</span>
+            <% end %>
+        </div>
+      <% end %>
+      <div class="btn btn-sm btn-icon btn-icon-gray-600 btn-active-color-primary position-relative me-n1">
+        <i class="ki-duotone ki-setting-2 fs-1"><span class="path1"></span><span class="path2"></span></i>
+      </div>
+    </div>
+  </div>
+</div>

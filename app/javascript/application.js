@@ -4,4 +4,3 @@ import "@hotwired/turbo-rails";
 import "client/widgets.bundle";
 import "client/widgets";
 import "client/custom";
-// import "plugins/general";

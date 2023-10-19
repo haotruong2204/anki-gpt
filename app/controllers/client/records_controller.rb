@@ -4,18 +4,22 @@ class Client::RecordsController < Client::BaseController
   before_action :set_record, only: [:show]
 
   def show
+    svg = HandleSvgService.new
+    @list_path = svg.handle_kanji @record.kanji_list
   end
 
   def create
     @record = Record.new record_params
     @record.account_id = current_account.id
+    @record.name = "Code=#{SecureRandom.uuid}-#{Time.zone.now.to_i}"
 
     if @record.save
       flash[:success] = "Tạo bản ghi thành công."
       current_account.histories.create(
         type_history: :download,
-        title: "Tải xuống file luyện viết #{@record.type_record}",
-        description: "Chúc bạn học thật tốt với file luyện viết này"
+        title: "Tạo bản nháp thành công.",
+        description: "Chúc bạn học thật tốt với file luyện viết này",
+        record_id: @record.id
       )
       redirect_to @record
     else
@@ -31,6 +35,6 @@ class Client::RecordsController < Client::BaseController
   end
 
   def set_record
-    @record = Record.find(params[:id])
+    @record = Record.friendly.find(params[:id])
   end
 end

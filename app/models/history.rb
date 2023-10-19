@@ -12,6 +12,7 @@
 #  updated_at   :datetime         not null
 #  account_id   :integer
 #  plan_id      :integer
+#  record_id    :integer
 #
 class History < ApplicationRecord
   # has_one :plan

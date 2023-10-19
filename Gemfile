@@ -120,7 +120,6 @@ gem "image_processing", "~> 1.2"
 
 # SVG
 gem "nokogiri"
-gem "victor"
 
 # Slug
 gem "friendly_id", "~> 5.4.0"

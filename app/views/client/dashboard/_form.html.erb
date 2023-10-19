@@ -14,7 +14,7 @@
         <%= simple_form_for @record, html: { id: "form-create-record", data: { turbo: false } } do |f| %>
           <div class="nav nav-pills nav-pills-custom mb-3">
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="option" checked="checked"  id="kt_radio_buttons_2_option_1"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="option" checked="checked"  id="kt_radio_buttons_2_option_1"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center mb-5" for="kt_radio_buttons_2_option_1">
                 <i class="ki-duotone ki-brush fs-1 me-4"><span class="path1"></span><span class="path2"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -23,7 +23,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="hiragana" id="kt_radio_buttons_2_option_2"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="hiragana" id="kt_radio_buttons_2_option_2"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_2">
                 <i class="ki-duotone ki-message-text-2 fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -32,7 +32,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="katakana" id="kt_radio_buttons_2_option_3"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="katakana" id="kt_radio_buttons_2_option_3"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_3">
                 <i class="ki-duotone ki-notepad fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -41,7 +41,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="sub_kanji" id="kt_radio_buttons_2_option_4"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="sub_kanji" id="kt_radio_buttons_2_option_4"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_4">
                 <i class="ki-duotone ki-notepad fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -50,7 +50,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="kanji_n5" id="kt_radio_buttons_2_option_5"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="kanji_n5" id="kt_radio_buttons_2_option_5"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_5">
                 <i class="ki-duotone ki-notepad fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -59,7 +59,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="kanji_n4" id="kt_radio_buttons_2_option_6"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="kanji_n4" id="kt_radio_buttons_2_option_6"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_6">
                 <i class="ki-duotone ki-notepad fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -68,7 +68,7 @@
               </label>
             </div>
             <div class="nav-item nav-item mb-3 me-3 me-lg-6">
-              <input type="radio" class="btn-check" name="record[type]" value="kanji_n3" id="kt_radio_buttons_2_option_7"/>
+              <input type="radio" class="btn-check" name="record[type_record]" value="kanji_n3" id="kt_radio_buttons_2_option_7"/>
               <label class="btn btn-outline btn-outline-dashed btn-active-light-primary p-5 d-flex align-items-center" for="kt_radio_buttons_2_option_7">
                 <i class="ki-duotone ki-notepad fs-1 me-4"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
                 <span class="d-block fw-semibold text-start">
@@ -77,26 +77,23 @@
               </label>
             </div>
           </div>
-          <div class="form-floating">
+          <div class="form-floating mb-5">
             <%= f.input :kanji_list, as: :text,
               input_html: {
                 value: f.object.kanji_list, id: "floatingTextarea1", placeholder: "Nhập Kanji",
                 autocomplete: "off", class: "form-control form-control-solids",
                 rows: 4 }, label: false %>
           </div>
-          <div class="input-group mb-5 pt-7">
-            <span class="input-group-text" id="basic-addon3">
+          <div class="input-group mb-5">
+            <span class="input-group-text" id="record-title">
               <i class="ki-duotone ki-crown-2 fs-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
             </span>
-            <%= f.input :title, as: :string,
-              input_html: {
-                value: "luyenkanji.com | @thocodehoctiengnhat", class: "w-90 form-control", id: "basic-addon3", disabled: true, placeholder: "Dấu ấn cá nhân",
-                autocomplete: "off" }, label: false %>
+            <input type="text" name="record[title]" autocomplete="off" class="form-control" placeholder="Dấu ấn cá nhân" value="luyenkanji.com | @thocodehoctiengnhat" aria-label="title" aria-describedby="record-title"/>
           </div>
 
           <button type="submit" class="btn btn-primary">
             <i class="ki-duotone ki-click fs-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>
-            Tạo PDF
+            Tạo bản nháp
           </button>
         <% end %>
       </div>

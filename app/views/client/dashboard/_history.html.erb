@@ -18,6 +18,7 @@
             aria-labelledby="kt_activity_today_tab"
           >
             <div class="timeline">
+              <!--
               <div class="timeline-item">
                 <div class="timeline-line w-40px"></div>
                 <div
@@ -111,7 +112,7 @@
                         <img
                           alt=""
                           class="w-30px me-3"
-                          src="assets/media/svg/files/pdf.svg"
+                          src="<%= asset_path("media/svg/files/pdf.svg") %>"
                         />
                         <div class="ms-1 fw-semibold">
                           <a
@@ -162,8 +163,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              
+              </div> -->
 
               <% current_account.histories.order(created_at: :desc).each do |history| %>
                 <% if history.download? %>
@@ -179,18 +179,21 @@
                         <a class="fs-5 fw-semibold text-gray-800 text-hover-primary mb-2"><%= history.title %></a>
                         <div class="d-flex align-items-center mt-1 fs-6">
                           <div class="text-muted me-2 fs-7">
-                            Lúc <%= history.created_at.strftime("%R") %>
+                            Tạo lúc <%= history.created_at.strftime("%T %d/%m/%Y") %>
                           </div>
                         </div>
                       </div>
                       <div class="overflow-auto pb-5">
-                        <div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+                        <div class="d-flex align-items-center justify-content-between border border-dashed border-gray-300 rounded min-w-700px p-5">
                           <div class="d-flex flex-aligns-center pe-10 pe-lg-20">
-                            <img alt="" class="w-30px me-3" src="assets/media/svg/files/pdf.svg"/>
+                            <img alt="" class="w-30px me-3" src="<%= asset_path("media/svg/files/pdf.svg") %>"/>
                             <div class="ms-1 fw-semibold">
                               <span class="fs-6 text-hover-primary fw-bold">[luyenkanji.com]file_luyen_N5.pdf</span>
                               <div class="text-gray-400">1.9mb</div>
                             </div>
+                          </div>
+                          <div>
+                            <a href="<%= get_path_record(history.record_id) %>" class="btn btn-sm btn-light btn-active-light-primary">Xem chi tiết</a>
                           </div>
                         </div>
                       </div>
@@ -219,7 +222,7 @@
                       class="d-flex align-items-center mt-1 fs-6"
                     >
                       <div class="text-muted me-2 fs-7">
-                        Sent at 5:05 AM by 
+                        Tạo lúc 5:05:03 20/10/2020 bởi 
                         <a
                           href="#"
                           class="text-primary fw-bold me-1"
