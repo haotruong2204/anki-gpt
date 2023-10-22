@@ -2,7 +2,7 @@
 
 class HandleJsonKanjiService
   def handle_file
-    file_path = Rails.root.join("tmp", "kvg-index.json")
+    file_path = Rails.root.join("db", "kvg-index.json")
     begin
       file_content = File.read(file_path)
       json_data = JSON.parse(file_content)
