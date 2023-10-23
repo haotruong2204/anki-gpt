@@ -66,10 +66,10 @@
                   </div>
                   <div class="row g-3 mb-9">
                     <div class="col-md-6">
-                      <a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
+                      <%= button_to account_google_oauth2_omniauth_authorize_path, method: :post, data: {turbo: "false"}, class: "btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100" do %>
                         <img alt="Logo" src="<%= asset_path('media/svg/brand-logos/google-icon.svg')%>" class="h-15px me-3"/>   
                         Đăng nhập với Google
-                      </a>
+                      <% end %>
                     </div>
                     <div class="col-md-6">
                       <a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">

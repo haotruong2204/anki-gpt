@@ -1,32 +1,40 @@
-# frozen_string_literal: true
-
 class Client::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
-    @account = Account.create_from_provider_data request.env["omniauth.auth"]
+  def google_oauth2
+    generic_callback(:google_oauth2)
+  end
+
+  def generic_callback provider
+    @account = Account.from_omniauth(request.env["omniauth.auth"])
+    account_exits = Account.where("email = ? and provider != ?", @account.email, provider).take
+    return handle_account_exits(account_exits, provider) if account_exits
 
     if @account.persisted?
-      sign_in_and_redirect @account, event: :authentication
-      set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+      set_flash_message(:notice, :success, kind: provider.capitalize)
     else
-      flash[:error] = check_errors
-      redirect_to root_path
+      @account.email = @account.uid if @account.email.blank?
+      @account.save(validate: false)
+      @account.histories.create(
+        type_history: :create_account,
+        title: "Chào mừng bạn đến với hệ thống!",
+        description: "Chúc bạn có những trải nghiệm thú vị trong hành trình học tiếng Nhật.",
+      )
     end
+    @account.update last_sign_in_at: Time.zone.now
+    sign_in_and_redirect @account, event: :authentication
   end
 
   def failure
-    flash[:error] = t("common.errors.login_failed")
     redirect_to root_path
   end
 
   private
 
-  def check_errors
-    if @account.try(:errors).try(:messages) && @account.errors.messages[:email] &&
-       @account.errors.messages[:email].include?(t("common.errors.dupplicate_mail"))
+  def handle_account_exits account_exits, provider
+    account_exits.uid = @account.uid
+    account_exits.provider = provider
 
-      t("common.errors.dupplicate_mail")
-    else
-      t("common.errors.login_failed")
-    end
+    account_exits.save
+    set_flash_message(:notice, :success, kind: provider.capitalize)
+    sign_in_and_redirect account_exits, event: :authentication
   end
 end

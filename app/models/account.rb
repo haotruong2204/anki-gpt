@@ -27,6 +27,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string(255)
+#  role                   :integer          default("free")
 #  sign_in_count          :integer          default(0), not null
 #  slug                   :string(255)
 #  status                 :integer          default(1)
@@ -53,12 +54,25 @@ class Account < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :async,
          :recoverable, :rememberable, :trackable, :confirmable, :lockable,
-         :omniauthable, :confirmable, :validatable, omniauth_providers: [:facebook, :google_oauth2, :github, :line]
+         :omniauthable, :confirmable, :validatable, omniauth_providers: [:google_oauth2]
 
   has_many :histories
   has_many :records
 
+  enum role: { free: 0, bacsic: 1, advanced: 2 }
+
   before_save :set_user_name
+
+  def self.from_omniauth auth
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+      binding.pry
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.full_name = auth.info.name
+      user.photo_url = auth.info.image
+      user.confirmed_at = Time.zone.now
+    end
+  end
 
   private
 

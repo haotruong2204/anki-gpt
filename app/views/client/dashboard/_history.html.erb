@@ -200,71 +200,72 @@
                     </div>
                   </div>
                 <% end %>
-              <% end %>
-
-              <div class="timeline-item">
-                <div class="timeline-line w-40px"></div>
-                <div
-                  class="timeline-icon symbol symbol-circle symbol-40px"
-                >
-                  <div class="symbol-label bg-light">
-                    <i
-                      class="ki-outline ki-pencil fs-2 text-gray-500"
-                    ></i>
-                  </div>
-                </div>
-                <div class="timeline-content mb-0 mt-n1">
-                  <div class="pe-3 mb-5">
-                    <div class="fs-5 fw-semibold mb-2">
-                      Tạo tài khoản thành công!
-                    </div>
+                <% if history.create_account? %>
+                  <div class="timeline-item">
+                    <div class="timeline-line w-40px"></div>
                     <div
-                      class="d-flex align-items-center mt-1 fs-6"
+                      class="timeline-icon symbol symbol-circle symbol-40px"
                     >
-                      <div class="text-muted me-2 fs-7">
-                        Tạo lúc 5:05:03 20/10/2020 bởi 
-                        <a
-                          href="#"
-                          class="text-primary fw-bold me-1"
-                          >Quản trị viên</a
-                        >
+                      <div class="symbol-label bg-light">
+                        <i
+                          class="ki-outline ki-pencil fs-2 text-gray-500"
+                        ></i>
                       </div>
                     </div>
-                  </div>
-                  <div class="overflow-auto mb-10 pb-5">
-                    <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed min-w-lg-600px flex-shrink-0 p-6">
-                      <i class="ki-duotone ki-notification-on fs-2tx text-primary me-4">
-                        <span class="path1"></span>
-                        <span class="path2"></span>
-                        <span class="path3"></span>
-                        <span class="path4"></span>
-                        <span class="path5"></span>
-                      </i>
-                      <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
-                        <div class="mb-3 mb-md-0 fw-semibold">
-                          <h4 class="text-gray-900 fw-bold">
-                            Chào mừng bạn đến với hệ thống!
-                          </h4>
-                          <div class="fs-6 text-gray-700 pe-7">
-                            Chúc bạn có những trải nghiệm thú vị trong hành trình học tiếng Nhật.
+                    <div class="timeline-content mb-0 mt-n1">
+                      <div class="pe-3 mb-5">
+                        <div class="fs-5 fw-semibold mb-2">
+                          Tạo tài khoản thành công!
+                        </div>
+                        <div
+                          class="d-flex align-items-center mt-1 fs-6"
+                        >
+                          <div class="text-muted me-2 fs-7">
+                            Tài khoản được tạo thành công lúc <%= history.created_at.strftime("%T %d/%m/%Y") %> bởi 
+                            <a
+                              href="javascript:void(0)"
+                              class="text-primary fw-bold me-1"
+                              >Quản trị viên</a
+                            >
                           </div>
                         </div>
-                        <a href="https://luyenkanji.com/"
-                          data-bs-toggle="modal"
-                          data-bs-target="#kt_modal_upgrade_plan" 
-                          class="btn btn-secondary px-6 align-self-center text-nowrap d-flex justify-content-between align-items-start">
-                          <span>Nâng cấp tài khoản để trải nghiệm tốt hơn&nbsp;&nbsp;</span>
-                          <i class="ki-duotone ki-crown-2 text-warning fs-2">
+                      </div>
+                      <div class="overflow-auto mb-10 pb-5">
+                        <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed min-w-lg-600px flex-shrink-0 p-6">
+                          <i class="ki-duotone ki-notification-on fs-2tx text-primary me-4">
                             <span class="path1"></span>
                             <span class="path2"></span>
                             <span class="path3"></span>
+                            <span class="path4"></span>
+                            <span class="path5"></span>
                           </i>
-                        </a >
+                          <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+                            <div class="mb-3 mb-md-0 fw-semibold">
+                              <h4 class="text-gray-900 fw-bold">
+                                <%= history.title %>
+                              </h4>
+                              <div class="fs-6 text-gray-700 pe-7">
+                                <%= history.description %>
+                              </div>
+                            </div>
+                            <a href="https://luyenkanji.com/"
+                              data-bs-toggle="modal"
+                              data-bs-target="#kt_modal_upgrade_plan" 
+                              class="btn btn-secondary px-6 align-self-center text-nowrap d-flex justify-content-between align-items-start">
+                              <span>Nâng cấp tài khoản để trải nghiệm tốt hơn&nbsp;&nbsp;</span>
+                              <i class="ki-duotone ki-crown-2 text-warning fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                              </i>
+                            </a >
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

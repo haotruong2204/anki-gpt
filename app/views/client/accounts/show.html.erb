@@ -33,7 +33,7 @@
                 class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative"
               >
                 <img
-                  src="<%= asset_path("media/avatars/blank.png") %>"
+                  src="<%= @account.photo_url %>"
                   alt="image"
                 />
                 <div
@@ -152,15 +152,9 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3"
-                >
-                  <div
-                    class="d-flex justify-content-between w-100 mt-auto mb-2"
-                  >
-                    <span class="fw-semibold fs-6 text-gray-400"
-                      >Profile Compleation</span
-                    >
+                <div class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
+                  <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                    <span class="fw-semibold fs-6 text-gray-400">Hoàn thiện hồ sơ</span>
                     <span class="fw-bold fs-6">50%</span>
                   </div>
                   <div class="h-5px mx-3 w-100 bg-light mb-3">
@@ -257,7 +251,7 @@
               </span>
             </label>
             <div class="col-lg-8">
-              <span class="fw-bold fs-6 text-gray-800"><%= @account.birth_of_date.strftime(Settings.date.formats) %></span>
+              <span class="fw-bold fs-6 text-gray-800"><%= @account.birth_of_date&.strftime(Settings.date.formats) %></span>
             </div>
           </div>
           <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">
